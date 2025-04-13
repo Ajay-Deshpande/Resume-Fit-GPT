@@ -38,6 +38,8 @@ JOB_DESCRIPTION:
     Name of the company that has the job opening
   job_title: >
     Job title
+  job_id: >
+    Job ID
   team: Name of the team within the company. Team name should be null if it's not known.
   job_summary: >
     Brief summary of the job, not exceeding 100 words

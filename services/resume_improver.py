@@ -148,7 +148,7 @@ class ResumeImprover:
         self.job_post = JobPost(self.job_post_raw)
         self.parsed_job = self.job_post.parse_job_post(verbose=False)
         try:
-            filename = self.parsed_job["company"] + "_" + self.parsed_job["job_title"]
+            filename = self.parsed_job["company"] + "_" + (self.parsed_job["job_id"] or self.parsed_job["job_title"])
             filename = filename.replace(" ", "_")
         except KeyError:
             if "://" in self.url:

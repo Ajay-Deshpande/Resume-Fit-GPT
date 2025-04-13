@@ -1,7 +1,7 @@
 import logging
 import os
 import configparser
-from langchain_openai import ChatOpenAI
+from langchain_ollama.llms import OllamaLLM
 
 # Initialize logger
 logger = logging.getLogger(__name__)
@@ -25,11 +25,11 @@ REQUESTS_HEADERS = {
 }
 
 # Define model configuration
-CHAT_MODEL = ChatOpenAI
-MODEL_NAME = "gpt-4o"
+CHAT_MODEL = OllamaLLM
+MODEL_NAME = "llama3.1"
 TEMPERATURE = 0.3
-OPEN_FILE_COMMAND = "cursor -r"
-#OPEN_FILE_COMMAND = "code -r"
+# OPEN_FILE_COMMAND = "cursor -r"
+OPEN_FILE_COMMAND = "code -r"
 MAX_CONCURRENT_WORKERS = 4
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 5
@@ -44,5 +44,5 @@ def ensure_openai_api_key():
         os.environ["OPENAI_API_KEY"] = input("Enter your OpenAI API key:")
 
 
-ensure_openai_api_key()
+# ensure_openai_api_key()
 

@@ -61,21 +61,21 @@ pip install ResumeGPT
 or:
 
 ```bash
-pip install git+https://github.com/takline/ResumeGPT.git
+pip install git+https://github.com/Ajay-Deshpande/Resume-Fit-GPT.git
 ```
 
 or:
 
 
 ```bash
-git clone https://github.com/takline/ResumeGPT.git
-cd ResumeGPT
+git clone https://github.com/Ajay-Deshpande/Resume-Fit-GPT.git
+cd "Resume-Fit-GPT"
 pip install -r requirements.txt
 ```
 
 ## Usage
 
- - Add your resume to `ResumeGPT/data/sample_resume.yaml` (make sure `ResumeGPT.config.YOUR_RESUME_NAME` is set to your resume filename in the `.data/` folder)
+ - Add your resume to `Resume-Fit-GPT/data/sample_resume.yaml` (make sure `ResumeGPT.config.YOUR_RESUME_NAME` is set to your resume filename in the `.data/` folder)
  - Provide ResumeGPT with the link to a job posting and it will tailot your resume to the job:
 
 ### Single job posting usage

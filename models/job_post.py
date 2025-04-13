@@ -16,6 +16,9 @@ class JobDescription(BaseModel):
     job_title: Optional[str] = Field(
         None, description=Prompts.descriptions["JOB_DESCRIPTION"]["job_title"]
     )
+    job_id: Optional[str] = Field(
+        None, description=Prompts.descriptions["JOB_DESCRIPTION"]['job_id']
+    )
     team: Optional[str] = Field(
         None, description=Prompts.descriptions["JOB_DESCRIPTION"]["team"]
     )
