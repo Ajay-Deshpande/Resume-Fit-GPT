@@ -6,7 +6,7 @@ setup(
     description="An LLM fits the resume for the job description. Sit back, relax and apply.",
     author="Ajay Deshpande",
     author_email="deshpande.ajay.us@gmail.com",
-    url="https://github.com/Ajay-Deshpande/Resume-Fit-GPT",
+    url="https://github.com/Ajay-Deshpande/ResumeGPT",
     packages=find_packages(),
     install_requires=[
         "beautifulsoup4>=4.9.3",
