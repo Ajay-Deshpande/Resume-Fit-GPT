@@ -13,14 +13,13 @@ from resumeGPT.models.resume import (
     ResumeSectionHighlighterOutput,
 )
 from resumeGPT import utils
-from resumeGPT import config
+from resumeGPT.config import config
 from resumeGPT.services.langchain_helpers import *
 from resumeGPT.prompts.prompts import Prompts
 from resumeGPT.models.job_post import JobPost
 from resumeGPT.pdf_generation import ResumePDFGenerator
 from fp.fp import FreeProxy
 import time
-from resumeGPT.config import config
 from resumeGPT.services.background_runner import BackgroundRunner
 
 

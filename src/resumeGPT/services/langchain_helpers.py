@@ -4,7 +4,7 @@ from dateutil.relativedelta import relativedelta
 from langchain_ollama.llms import OllamaLLM
 import langchain
 from langchain_community.cache import InMemoryCache
-from resumeGPT import config
+from resumeGPT.config import config
 
 # Set up LLM cache
 langchain.llm_cache = InMemoryCache()

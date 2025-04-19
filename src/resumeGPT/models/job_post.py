@@ -1,7 +1,7 @@
 from langchain_core.pydantic_v1 import BaseModel, Field
 from typing import List, Optional
 from resumeGPT.prompts.prompts import Prompts
-from resumeGPT import config
+from resumeGPT.config import config
 from resumeGPT import services
 
 class JobDescription(BaseModel):

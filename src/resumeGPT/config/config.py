@@ -1,12 +1,21 @@
 import logging
 import os
+from pathlib import Path
 from langchain_ollama.llms import OllamaLLM
 import importlib.resources
 
 PACKAGE_NAME = 'resumeGPT'
-RESOURCES_DIR_NAME = 'resources'
-package_root_path = importlib.resources.files(PACKAGE_NAME)
+RESOURCES_DIR_NAME = 'Resources'
 
+# Define the names of the YAML files inside 'resources'
+PROMPTS_YAML_FILENAME = 'prompts.yaml' # <-- Make sure these match your filenames
+DESCRIPTIONS_YAML_FILENAME = 'descriptions.yaml' # <-- Make sure these match your filenames
+
+
+RESOURCES_PATH: Path | None = None
+PROMPTS_YAML: str | None = None
+DESCRIPTIONS_YAML: str | None = None
+package_root_path = importlib.resources.files(PACKAGE_NAME)
 # Join the package root path with the name of the resources directory
 RESOURCES_PATH = (package_root_path / RESOURCES_DIR_NAME).resolve()
 PROMPTS_YAML = (package_root_path / "prompts/prompts.yaml").resolve()

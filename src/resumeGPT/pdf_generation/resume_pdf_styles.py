@@ -1,5 +1,5 @@
 import os
-from resumeGPT import config
+from resumeGPT.config import config
 
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from reportlab.lib.pagesizes import A4
