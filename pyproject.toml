@@ -77,3 +77,8 @@ Repository = "https://github.com/Ajay-Deshpande/ResumeGPT" # Explicitly add Repo
 [tool.setuptools.packages.find]
 # Tells setuptools where to find your package code
 where = ["src"]
+
+[tool.setuptools.package-data]
+# Include all files in the 'resources' and 'config' subdirectories
+# relative to the package root (src/resumeGPT/)
+"resumeGPT" = ["resources/*", "prompts/*.yaml"]

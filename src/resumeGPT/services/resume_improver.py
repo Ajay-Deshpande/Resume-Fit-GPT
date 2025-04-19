@@ -15,7 +15,7 @@ from resumeGPT.models.resume import (
 from resumeGPT import utils
 from resumeGPT import config
 from resumeGPT.services.langchain_helpers import *
-from resumeGPT.prompts import Prompts
+from resumeGPT.prompts.prompts import Prompts
 from resumeGPT.models.job_post import JobPost
 from resumeGPT.pdf_generation import ResumePDFGenerator
 from fp.fp import FreeProxy

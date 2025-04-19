@@ -2,8 +2,6 @@ from langchain_core.pydantic_v1 import BaseModel, Field
 from typing import List
 from resumeGPT.prompts.prompts import Prompts
 
-Prompts.initialize()
-
 class ResumeSectionHighlight(BaseModel):
     """Pydantic class that defines each highlight to be returned by the LLM."""
 

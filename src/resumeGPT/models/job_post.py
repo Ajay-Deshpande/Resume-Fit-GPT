@@ -4,9 +4,6 @@ from resumeGPT.prompts.prompts import Prompts
 from resumeGPT import config
 from resumeGPT import services
 
-Prompts.initialize()
-
-
 class JobDescription(BaseModel):
     """Description of a job posting."""
 
