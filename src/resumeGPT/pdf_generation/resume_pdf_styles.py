@@ -47,7 +47,6 @@ DEBUG_STYLE = ("GRID", (0, 0), (-1, -1), 0, colors.black)
 
 PAGE_WIDTH, PAGE_HEIGHT = A4
 FULL_COLUMN_WIDTH = PAGE_WIDTH - 1 * inch
-JSON_PATH = os.path.join(config.DATA_PATH, "data.json")
 
 FONT_PATHS = {
     "regular": os.path.join(config.RESOURCES_PATH, "fonts/calibri.ttf"),

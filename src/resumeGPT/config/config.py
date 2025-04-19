@@ -1,6 +1,16 @@
 import logging
 import os
 from langchain_ollama.llms import OllamaLLM
+import importlib.resources
+
+PACKAGE_NAME = 'resumeGPT'
+RESOURCES_DIR_NAME = 'resources'
+package_root_path = importlib.resources.files(PACKAGE_NAME)
+
+# Join the package root path with the name of the resources directory
+RESOURCES_PATH = (package_root_path / RESOURCES_DIR_NAME).resolve()
+PROMPTS_YAML = (package_root_path / "prompts/prompts.yaml").resolve()
+DESCRIPTIONS_YAML = (package_root_path / "prompts/extractor_descriptions.yaml").resolve()
 
 # Initialize logger
 logger = logging.getLogger(__name__)
@@ -10,7 +20,7 @@ PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BACKGROUND_TASKS_LOG = os.path.join(PROJECT_PATH, "background_tasks", "tasks.log")
 if not os.path(PROJECT_PATH, "background_tasks").exists():
     os.makedirs(os.path(PROJECT_PATH, "background_tasks"))
-    
+
 REQUESTS_HEADERS = {
     "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
 }

@@ -1,4 +1,4 @@
-from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
+from langchain.prompts import HumanMessagePromptTemplate
 from langchain.schema import HumanMessage, SystemMessage
 import yaml
 from resumeGPT import config
