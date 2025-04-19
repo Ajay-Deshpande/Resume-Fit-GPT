@@ -1,0 +1,1 @@
+from resumeGPT.config import *

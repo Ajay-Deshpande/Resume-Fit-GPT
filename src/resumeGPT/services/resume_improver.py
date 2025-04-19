@@ -1,36 +1,32 @@
 import os
 import time
 import subprocess
-from datetime import datetime
-from typing import List, Optional
+from typing import List
 from bs4 import BeautifulSoup
-import uuid
 import requests
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSequence
-from langchain_core.output_parsers import StrOutputParser
-from ..models.resume import (
+from resumeGPT.models.resume import (
     ResumeImproverOutput,
     ResumeSkillsMatcherOutput,
     ResumeSummarizerOutput,
     ResumeSectionHighlighterOutput,
 )
-from .. import utils
-from .. import config
-from .langchain_helpers import *
-from ..prompts import Prompts
-from ..models.job_post import JobPost
-from ..pdf_generation import ResumePDFGenerator
-import concurrent.futures
+from resumeGPT import utils
+from resumeGPT import config
+from resumeGPT.services.langchain_helpers import *
+from resumeGPT.prompts import Prompts
+from resumeGPT.models.job_post import JobPost
+from resumeGPT.pdf_generation import ResumePDFGenerator
 from fp.fp import FreeProxy
 import time
-from ..config import config
-from .background_runner import BackgroundRunner
+from resumeGPT.config import config
+from resumeGPT.services.background_runner import BackgroundRunner
 
 
 class ResumeImprover:
 
-    def __init__(self, url, resume_location=None, llm_kwargs: dict = None):
+    def __init__(self, url, resume_location, llm_kwargs: dict = None):
         """Initialize ResumeImprover with the job post URL and optional resume location.
 
         Args:
@@ -52,7 +48,7 @@ class ResumeImprover:
         self.yaml_loc = None
         self.url = url
         self.download_and_parse_job_post()
-        self.resume_location = resume_location or config.DEFAULT_RESUME_PATH
+        self.resume_location = resume_location
         self._update_resume_fields()
 
     def _update_resume_fields(self):

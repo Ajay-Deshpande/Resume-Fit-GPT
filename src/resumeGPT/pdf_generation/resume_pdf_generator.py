@@ -1,11 +1,4 @@
-import configparser
-import json
-import os
-import random
-from .. import config
-from .. import utils
-import subprocess
-import yaml
+from resumeGPT import utils
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
@@ -15,13 +8,10 @@ from reportlab.lib.units import inch
 from reportlab.pdfbase import pdfmetrics, ttfonts
 from reportlab.platypus import (
     Paragraph,
-    SimpleDocTemplate,
     Table,
     TableStyle,
-    Spacer,
-    HRFlowable,
 )
-from . import resume_pdf_styles
+from resumeGPT.pdf_generation import resume_pdf_styles
 
 
 class ResumePDFGenerator:

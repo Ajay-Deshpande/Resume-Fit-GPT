@@ -1,11 +1,8 @@
 import os
 import subprocess
 from jinja2 import Environment, FileSystemLoader
-from ruamel.yaml import YAML
-from ruamel.yaml.compat import StringIO
-from ruamel.yaml.error import YAMLError
-from .. import config
-from . import yaml_handler
+from resumeGPT import config
+from resumeGPT.utils import yaml_handler
 
 
 def generate_pdf(yaml_file: str, template_file: str = None) -> str:

@@ -1,6 +1,5 @@
 import threading
-import time
-from ..config import config
+from resumeGPT.config import config
 import logging
 
 

@@ -1,7 +1,6 @@
-import os
 from typing import Union, List, Generator, Optional
-from .. import config
-from .. import utils
+from resumeGPT import config
+from resumeGPT import utils
 
 
 def read_jobfile(filename: str) -> str:

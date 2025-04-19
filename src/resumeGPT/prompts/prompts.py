@@ -1,7 +1,7 @@
 from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain.schema import HumanMessage, SystemMessage
 import yaml
-from .. import config
+from resumeGPT import config
 
 
 class Prompts:

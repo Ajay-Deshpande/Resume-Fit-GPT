@@ -1,49 +1,79 @@
 [build-system]
+# Specifies that setuptools is needed to build the package
 requires = ["setuptools>=61.0"]
+# Specifies the function setuptools uses to build
 build-backend = "setuptools.build_meta"
 
 [project]
+# Core metadata for your package
 name = "ResumeGPT"
-version = "2.1"
-description = "Tailor your resume to match any job posting effortlessly"
+version = "3" # Using the version from your original pyproject.toml
+description = "Tailor your resume to match any job posting effortlessly" # Using description from pyproject.toml
 authors = [
-    { name = "Tyler Kline", email = "tylerkline@gmail.com" }
+    { name = "Tyler Kline", email = "tylerkline@gmail.com" }, # Using author from pyproject.toml
+    { name = "Ajay Deshpande", email = "deshpande.ajay.us@gmail.com" },
 ]
 maintainers = [
-    { name = "Tyler Kline", email = "tylerkline@gmail.com" }
+    { name = "Ajay Deshpande", email = "deshpande.ajay.us@gmail.com" }, # Using maintainer from pyproject.toml
 ]
-readme = "README.md"
-license = { file = "LICENSE.txt" }
-requires-python = ">=3.11"
+readme = "README.md" # Link to your README file
+license = { file = "LICENSE.txt" } # Assumes your license file is named LICENSE.txt. **Please verify this filename.**
+requires-python = ">=3.11" # Minimum Python version needed
+keywords = ["resume", "job", "application", "automation", "job search"] # Helps discovery on PyPI
+classifiers = [ # Standard classifiers for PyPI
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12", # Add other supported versions if applicable
+    "License :: OSI Approved :: MIT License", # Added based on setup.py - **VERIFY this is your actual license**
+    "Operating System :: OS Independent", # Added based on setup.py
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Utilities",
+]
+# Runtime dependencies: Only list packages needed for the package to FUNCTION
 dependencies = [
     "beautifulsoup4>=4.12.3",
-    "configparser>=7.1.0",
     "langchain>=0.2.11",
-    "langchain-openai>=0.1.6",
+    "langchain-ollama>=0.3.0",
     "langchain-core>=0.2.36",
     "langchain-community>=0.2.10",
     "pydantic>=2.7.1",
     "reportlab>=4.2.2",
     "requests>=2.32.3",
     "ruamel.yaml>=0.18.6",
-    "pytest>=8.2.2",
-    "python-dateutil>=2.8.0",
+    "python-dateutil>=2.8.0", # Often a transitive dependency, check if you import it directly.
     "free-proxy>=1.1.1",
     "Jinja2>=3.1.4",
-    "PyYAML>=5.3.1",
-    "pytest-cov>=5.0.0"
-]
-keywords = ["resume", "job", "application", "automation", "job search"]
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3"
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=8.2.2"
+# Dependencies needed only for running tests
+test = [
+    "pytest>=8.2.2",
+    "pytest-cov>=5.0.0",
 ]
+# Dependencies helpful for development (includes testing, linting, building, etc.)
+dev = [
+    "pytest>=8.2.2",        # Test runner
+    "pytest-cov>=5.0.0",    # Code coverage for tests
+    # Add other dev tools like linters, formatters below
+    # "ruff",
+    # "black",
+    # "mypy",
+    "build",                # For building the package (python -m build)
+    "twine",                # For uploading the package to PyPI
+]
+# You can add other groups like 'docs' if needed
 
 [project.urls]
-Homepage = "https://github.com/takline/ResumeGPT"
-"Bug Tracker" = "https://github.com/takline/ResumeGPT/issues"
+# Links related to your project
+Homepage = "https://github.com/Ajay-Deshpande/ResumeGPT" # From pyproject.toml
+Repository = "https://github.com/Ajay-Deshpande/ResumeGPT" # Explicitly add Repository URL
+"Bug Tracker" = "https://github.com/Ajay-Deshpande/ResumeGPT/issues" # From pyproject.toml
+
+# --- Tool-specific configurations ---
+
+[tool.setuptools.packages.find]
+# Tells setuptools where to find your package code
+where = ["src"]

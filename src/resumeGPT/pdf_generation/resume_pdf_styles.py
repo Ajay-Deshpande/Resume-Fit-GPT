@@ -1,12 +1,12 @@
 import os
-from .. import config
+from resumeGPT import config
 
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.platypus import SimpleDocTemplate
 
 
 def generate_doc_template(name, job_data_location):
